@@ -1,0 +1,24 @@
+tabela,coluna,descricao,origem
+contratos_cw,id_cw,Identificador do contrato (CW),Sintetico
+contratos_cw,fornecedor,Fornecedor ficticio; cada fornecedor atua em uma categoria,Sintetico
+contratos_cw,categoria,Categoria de servico recorrente,Sintetico
+contratos_cw,indexador,Clausula de reajuste: IPCA ou hibrido (dissidio + IPCA),Sintetico
+contratos_cw,peso_mao_de_obra,Peso da mao de obra no custo (0 a 1); pondera dissidio vs IPCA,Sintetico
+contratos_cw,data_inicio,Inicio da vigencia; define o mes de aniversario do reajuste,Sintetico
+contratos_cw,mes_reajuste,Mes (1-12) em que o contrato e reajustado,Derivado
+contratos_cw,valor_inicial,Valor anual aprovado no primeiro WS (R$),Sintetico
+contratos_cw,tem_teto / teto_pct,Clausula de teto de reajuste (0/1) e percentual do teto,Sintetico
+contratos_cw,tipo_contratacao,Constante: fornecedor unico (recorte sem concorrencia),Premissa
+contratos_cw,valor_total_acumulado / qtd_ws,Soma dos WS do contrato (R$) e quantidade de WS,Derivado
+aprovacoes_ws,id_ws / id_cw / ordem,"Aprovacao financeira, contrato de origem e sequencia (0 = inicial)",Sintetico
+aprovacoes_ws,data_aprovacao / valor_aprovado,Data e valor anual aprovado (R$) no WS,Sintetico
+base_analitica,ordem_reajuste,Numero do reajuste do contrato (1 = primeiro),Derivado
+base_analitica,valor_anterior,Valor do WS anterior (R$),Derivado
+base_analitica,spend_fornecedor_12m,Gasto aprovado do fornecedor nos 12 meses anteriores (R$),"Derivado, sem vazamento"
+base_analitica,share_spend_fornecedor,Participacao do fornecedor no gasto total dos 12 meses anteriores,"Derivado, sem vazamento"
+base_analitica,ipca_12m,IPCA acumulado 12m no mes anterior ao reajuste (%),"BCB/IBGE, ipca_mensal.csv"
+base_analitica,dissidio_ref_pct,"Reajuste do salario minimo do ano (%), proxy publica de dissidio",Decretos federais (conferir)
+base_analitica,indice_aplicavel_pct,w x dissidio_ref + (1-w) x IPCA12m (%),Derivado da clausula
+base_analitica,reajuste_anterior_pct / spread_anterior_pp,Reajuste e spread do evento anterior do mesmo contrato,Derivado
+base_analitica,reajuste_pct,ALVO: (WS atual / WS anterior - 1) x 100,Derivado
+base_analitica,spread_vs_indice_pp,reajuste_pct - indice_aplicavel_pct (ganho/perda de negociacao),Derivado

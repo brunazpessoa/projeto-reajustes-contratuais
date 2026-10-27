@@ -1,0 +1,22 @@
+,coeficiente_pp
+ipca_12m,1.9565
+pressao_salarial_pp,1.1314
+tem_teto,-0.4255
+categoria_TI - SaaS e Cloud,0.2965
+categoria_Limpeza e Conservacao,-0.1925
+categoria_Juridico e Auditoria (retainer),0.1749
+categoria_Locacao de Ativos,-0.1709
+categoria_Telecom e Links,0.1641
+peso_mao_de_obra,0.1559
+categoria_Seguranca e Portaria,-0.1347
+dissidio_ref_pct,0.1297
+log_spend,-0.1276
+categoria_Call Center,-0.1179
+categoria_Marketing e Comunicacao (retainer),0.0519
+categoria_BPO,-0.0445
+categoria_TI - Suporte e Help Desk,-0.0332
+ordem_reajuste,-0.017
+share_spend_fornecedor,0.0086
+categoria_Manutencao Predial,0.0062
+spread_anterior_pp,0.0014
+reajuste_anterior_pct,0.0005

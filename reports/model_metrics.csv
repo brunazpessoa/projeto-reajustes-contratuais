@@ -1,0 +1,9 @@
+modelo,tipo,mae_pp,rmse_pp,vies_pp,ganho_vs_media_pct
+Média do treino,baseline,0.7939,1.0052,0.5021,0.0
+Reajuste = IPCA 12m,baseline,1.0796,1.3357,-1.0796,-35.9844
+Índice da cláusula,baseline,0.1388,0.2861,-0.1078,82.5163
+Índice da cláusula + spread médio,baseline,0.1754,0.303,-0.1468,77.9025
+Regressão linear (só IPCA),modelo,0.4132,0.5244,-0.1261,47.9558
+Regressão linear + índice salarial,modelo,0.3375,0.4459,-0.0964,57.4879
+Ridge + índice salarial,modelo,0.3375,0.4459,-0.0964,57.4886
+Índice da cláusula + spread previsto,modelo,0.3848,0.5495,-0.3029,51.5287

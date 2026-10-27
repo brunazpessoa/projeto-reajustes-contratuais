@@ -1,0 +1,16 @@
+categoria,status,codigo,indexador,peso_mao_de_obra_medio,markup_medio_pp,prob_teto,valor_anual_tipico_rs,n_fornecedores,justificativa
+Limpeza e Conservacao,NO ESCOPO,LIM,Hibrido (dissidio + IPCA),0.8,0.2,0.1,2500000.0,12.0,Mao de obra intensiva; repactuacao por convencao coletiva
+Seguranca e Portaria,NO ESCOPO,SEG,Hibrido (dissidio + IPCA),0.8,0.3,0.1,4000000.0,12.0,"Vigilancia, portaria e controle de acesso; sensivel a piso salarial"
+Call Center,NO ESCOPO,CAL,Hibrido (dissidio + IPCA),0.7,0.3,0.1,3000000.0,10.0,Atendimento terceirizado; custo dominado por pessoal
+BPO,NO ESCOPO,BPO,Hibrido (dissidio + IPCA),0.65,0.4,0.15,4000000.0,10.0,Back-office terceirizado; mao de obra com salarios acima do piso
+TI - Suporte e Help Desk,NO ESCOPO,TIS,Hibrido (dissidio + IPCA),0.6,0.5,0.2,2000000.0,10.0,Suporte continuo com SLA; custo principal e equipe
+TI - SaaS e Cloud,NO ESCOPO,SAA,IPCA,0.0,0.9,0.55,2500000.0,12.0,"Mensalidade recorrente; reajuste por IPCA, usualmente com teto negociado"
+Telecom e Links,NO ESCOPO,TEL,IPCA,0.0,0.3,0.45,3000000.0,8.0,Links dedicados e telefonia corporativa; indice de precos
+Manutencao Predial,NO ESCOPO,MAN,Hibrido (dissidio + IPCA),0.5,0.5,0.3,1500000.0,12.0,"HVAC, elevadores, geradores; mistura de mao de obra e materiais"
+Locacao de Ativos,NO ESCOPO,LOC,IPCA,0.0,0.4,0.4,2000000.0,10.0,Frota e equipamentos de escritorio; indice de precos
+Juridico e Auditoria (retainer),NO ESCOPO,JUR,IPCA,0.0,0.6,0.45,800000.0,10.0,Honorarios mensais recorrentes; so contratos continuos
+Marketing e Comunicacao (retainer),NO ESCOPO,MKT,IPCA,0.0,0.6,0.45,1500000.0,10.0,Agencias com fee mensal; so contratos continuos
+Consultoria,FORA DO ESCOPO,,,,,,,,"contratos pontuais, sem reajuste recorrente"
+Treinamento,FORA DO ESCOPO,,,,,,,,contratos majoritariamente pontuais (cursos e turmas avulsas)
+Seguros e Planos de Saude,FORA DO ESCOPO,,,,,,,,"reajuste por sinistralidade e renovacao, nao por indice contratual"
+Manutencao industrial,FORA DO ESCOPO,,,,,,,,fora do perfil de servicos do banco

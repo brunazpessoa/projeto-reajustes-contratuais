@@ -1,0 +1,15 @@
+# ambiente virtual e caches
+.venv/
+venv/
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
+# segredos e arquivos locais
+.env
+.DS_Store
+.vscode/
+
+# gerados pelos scripts (rode prepare_data.py e train_model.py para recriar)
+data/processed/
+models/*.joblib
