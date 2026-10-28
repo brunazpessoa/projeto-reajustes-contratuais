@@ -1,0 +1,18 @@
+premissa,valor
+data_corte,2026-10-24
+contratos_ativos,269
+contratos_encerrados,17
+ganho_real_salario_minimo_pp,2.52
+ultimo_ipca_realizado,2026-09
+ultimo_mes_focus,2028-10
+horizonte,2028-12-31
+regra_teto,teto da cláusula aplicado após o modelo
+otimista_choque_ipca_pp,-1.0
+otimista_salario_minimo_2027_pct,7.49
+otimista_salario_minimo_2028_pct,5.85
+central_choque_ipca_pp,0.0
+central_salario_minimo_2027_pct,7.74
+central_salario_minimo_2028_pct,6.85
+estresse_choque_ipca_pp,2.0
+estresse_salario_minimo_2027_pct,8.24
+estresse_salario_minimo_2028_pct,8.85
