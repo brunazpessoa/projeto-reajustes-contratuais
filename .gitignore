@@ -10,6 +10,8 @@ __pycache__/
 .DS_Store
 .vscode/
 
-# gerados pelos scripts (rode prepare_data.py e train_model.py para recriar)
+# arquivos gerados localmente
 data/processed/
 models/*.joblib
+Thumbs.db
+~$*
