@@ -1,0 +1,26 @@
+﻿coluna;tipo;descricao;regra_ou_dominio;uso_modelo_A_orcamento;uso_modelo_B_negociacao
+id_evento;Texto;Identificador único do evento de reajuste;EVT0001 a EVT1000, ordenado por data-base;Não (identificador);Não (identificador)
+id_contrato;Texto;Identificador anonimizado do contrato;CTR0001... / um contrato gera 1 evento por ciclo de reajuste;Não (agrupamento/validação);Não (agrupamento/validação)
+fornecedor_id;Texto anonimizado;Identificador anonimizado do fornecedor;FORN_001 a FORN_070;Indireto: base para o histórico do fornecedor;Indireto: base para o histórico do fornecedor
+categoria;Categórico;Categoria de serviço profissional;Consultoria de Gestão | Consultoria de Tecnologia | Auditoria | Consultoria Tributária/Contábil;Sim;Sim
+subcategoria;Categórico;Subcategoria do serviço (mantida para análise descritiva);Ex.: Estratégia, Dados e Analytics, Auditoria Externa, Compliance Fiscal;Opcional (análise);Opcional (análise)
+data_inicio_contrato;Data;Data de início do contrato;2019-01-01 a 2025-12-01 / sempre >= 12 meses antes do 1º reajuste;Não (usar meses/numero_reajuste);Não
+data_base_reajuste;Data;Data-base em que o reajuste é aplicado;2022-01-01 a 2026-10-01 / define a divisão treino/teste temporal;Não (divisão temporal);Não (divisão temporal)
+valor_anual_antes;Decimal (R$);Valor anual do contrato antes do reajuste;Evolui pelo reajuste aprovado e por mudanças de escopo;Sim (usar log);Sim (usar log)
+modelo_remuneracao;Categórico;Forma de remuneração do contrato;Preço fixo | Homem-hora | Retainer mensal | Por entrega;Sim;Sim
+indice_contratual;Categórico;Índice previsto em contrato (controle contratual);IPCA | IGP-M | INPC | Livre negociação;Sim;Sim
+ipca_12m_pct;Decimal (%);IPCA acumulado 12 meses disponível na data-base (mês anterior);Série oficial IBGE, dez/2021 a set/2026 / mesmo valor para mesma data-base;Sim (principal);Sim (principal)
+reajuste_solicitado_pct;Decimal (%);Reajuste solicitado pelo fornecedor;0 a 20% / múltiplos de 0,05;NÃO (vazamento: posterior à previsão);Sim
+reajuste_aprovado_pct;Decimal (%);Reajuste efetivamente aprovado após negociação;<= solicitado, exceto exceções identificadas / múltiplos de 0,05;ALVO (Regressão Linear);ALVO (Regressão Linear)
+delta_solicitado_ipca_pp;Decimal (p.p.);Derivado: solicitado - IPCA;Calculado;NÃO (vazamento);Sim
+delta_aprovado_ipca_pp;Decimal (p.p.);Derivado: aprovado - IPCA;Calculado;Alvo alternativo / KPI benchmark;Alvo alternativo / KPI benchmark
+meses_desde_ultimo_reajuste;Inteiro;Meses desde o último reajuste (ou desde o início, no 1º reajuste);>= 12 / atrasos de 1 a 6 meses em ~8% dos ciclos;Sim;Sim
+numero_reajuste_contrato;Inteiro;Ordem do reajuste no contrato;1, 2, 3... / sequencial por contrato;Sim;Sim
+escopo_alterado;Booleano;Indica alteração relevante de escopo no ciclo;~6% da base / eventos com 1 são EXCLUÍDOS do treino;Filtro (excluir = 1);Filtro (excluir = 1)
+renovacao_concomitante;Booleano;Reajuste negociado junto com renovação contratual;~25% da base / aumenta a alavanca de Compras;Sim (conhecido antecipadamente);Sim
+houve_negociacao;Booleano;Houve negociação do reajuste;0 = aceito sem negociação;NÃO (vazamento);Não (resultado)
+quantidade_rodadas;Inteiro;Rodadas de negociação;0 a 5 / 0 se e somente se houve_negociacao = 0;NÃO (vazamento);Não (resultado)
+resultado_negociacao;Categórico;Desfecho da negociação;Aceito integralmente | Redução parcial | Recusado (reajuste zero) | Exceção: índice contratual acima do solicitado;NÃO (vazamento);Não (resultado)
+economia_negociacao_pp;Decimal (p.p.);Derivado: solicitado - aprovado;Calculado / negativo apenas nas exceções identificadas;NÃO (vazamento);Não (resultado) / KPI negociação
+faixa_reajuste_aprovado;Categórico;Faixa absoluta do % aprovado (briefing);Sem reajuste: 0% | Baixo: >0 a 3% | Moderado: >3 a 6% | Alto: >6 a 10% | Muito alto: >10%;Alvo descritivo;Alvo descritivo
+faixa_delta_ipca;Categórico;Faixa do aprovado relativa ao IPCA (alvo recomendado para a Árvore);Abaixo: < -0,5 p.p. | Alinhado: -0,5 a +0,5 | Acima: >+0,5 a +1,5 | Muito acima: > +1,5;ALVO (Árvore de Decisão);ALVO (Árvore de Decisão)
